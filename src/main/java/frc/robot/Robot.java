@@ -20,8 +20,12 @@ public class Robot extends TimedRobot {
    * initialization code.
    */
 
-  
-  // TODO: Create a new TalonFX and set its ID correctly.
+  final int kMotorId = 0; // TODO: Set correct motor ID
+  final double kPower = 0.3; // TODO: Set percent of power (between -1.0 and 1.0)
+
+  // Create a new TalonFX and set its ID correctly.
+  TalonFX m_kraken = new TalonFX(kMotorId);
+
 
   @Override
   public void robotInit() {}
@@ -40,7 +44,8 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopPeriodic() {
-    // TODO: Set the kraken's motor power here
+    // Set the kraken's motor power here
+    m_kraken.set(kPower);
   }
 
   @Override
